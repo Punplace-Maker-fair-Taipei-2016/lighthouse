@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <title>WF8266R Servo</title>
+
+    <!-- Imports WF8266R -->
+    <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="./js/wf8266r.js"></script>
+    <link href="./css/wf8266r.css" rel="stylesheet" />
+
+    <script>
+        document.addEventListener('wf8266r-ready', function (e) {
+             //歸 0
+            GPIO.servo(13,0,function(data){
+                console.log(data.degree);
+            });
+            GPIO.servo(12,0,function(data){
+                console.log(data.degree);
+            });
+        });
+        $(function () {
+            //載入 WF8266R 元件
+            GPIO.init();
+           
+        });
+    </script>
+
+</head>
+<body>
+    <unu-wf8266r ip="wf8266r.local" uuid="xxxx" device="xxxx"></unu-wf8266r>
+    <wf8266r-button id="servo0" type="servo" pin="13" value="0">servo 0</wf8266r-button>
+    <br />
+    <wf8266r-button id="servo1" type="servo" pin="12" value="0">servo 1</wf8266r-button>
+</body>
+</html>
