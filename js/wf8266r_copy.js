@@ -51,17 +51,9 @@ var GPIO = {
                     setInterval(function () { GPIO.toggle(button.html(), 0) }, this.watch);
                     break;
                 case "servo":
-                    button.html(
-                        "<span>" + this.title + "</span> <input type='range' pin='" + this.pin + 
-                        "' apiType='" + this.type + 
-                        "' delay='" + this.delay + 
-                        "' min='10' max='170' value='" + this.value + 
-                        "' step='1' onchange=\"GPIO.toggle(this, this.value, '" + this.id + 
-                        "')\"/> <input type='button' pin='" + this.pin +
-                        "' value='+5' onclick=\"this.value += 5;GPIO.toggle(this, '" + this.value + "', '" + this.id +
-                        "')\"/> <span id='" + this.id + 
-                        "_value'>" + this.value + 
-                        "</span>");
+                    button.html("<span>" + this.title + "</span> <input type='range' pin='" + this.pin + "' apiType='" + this.type + "' delay='"
+                    + this.delay + "' min='10' max='170' value='"
+                    + this.value + "' step='1' onchange=\"GPIO.toggle(this, this.value, '" + this.id + "')\"/><span id='" + this.id + "_value'>" + this.value + "</span>");
                     break;
                 default:
                     button.html("<button type='button' pin='" + this.pin

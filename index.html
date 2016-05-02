@@ -13,13 +13,23 @@
 
     <script>
         document.addEventListener('wf8266r-ready', function (e) {
-             //歸 0
-            GPIO.servo(13,0,function(data){
+             //歸 10
+            GPIO.servo(13,10,function(data){
                 console.log(data.degree);
             });
-            GPIO.servo(12,0,function(data){
+            GPIO.servo(12,10,function(data){
                 console.log(data.degree);
             });
+            GPIO.servo(4,10,function(data){
+                console.log(data.degree);
+            });
+            GPIO.servo(5,10,function(data){
+                console.log(data.degree);
+            });
+            GPIO.servo(15,10,function(data){
+                console.log(data.degree);
+            });
+
         });
         $(function () {
             //載入 WF8266R 元件
@@ -32,10 +42,11 @@
 <body>
 <!--    <unu-wf8266r ip="wf8266r.local" uuid="xxxx" device="xxxx"></unu-wf8266r>  -->
     <unu-wf8266r ip="192.168.1.96" uuid="xxxx" device="xxxx"></unu-wf8266r>
-    <wf8266r-button id="servo0" type="servo" pin="15" value="0">底座</wf8266r-button> <br />
-    <wf8266r-button id="servo1" type="servo" pin="4" value="0">炮塔1</wf8266r-button> <br />
-    <wf8266r-button id="servo1" type="servo" pin="5" value="0">炮塔2</wf8266r-button> <br />
-    <wf8266r-button id="servo1" type="servo" pin="12" value="0">炮塔3</wf8266r-button> <br />
-    <wf8266r-button id="servo1" type="servo" pin="13" value="0">炮塔4</wf8266r-button> <br />
+    <wf8266r-button id="servo_under" type="servo" pin="15" value="10">底座</wf8266r-button> <br />
+    <wf8266r-button id="servo0" type="servo" pin="4" value="10">炮塔1</wf8266r-button> <br />
+    <wf8266r-button id="servo1" type="servo" pin="5" value="10">炮塔2</wf8266r-button> <br />
+    <wf8266r-button id="servo2" type="servo" pin="12" value="10">炮塔3</wf8266r-button> <br />
+    <wf8266r-button id="servo3" type="servo" pin="13" value="10">炮塔4</wf8266r-button> <br />
+    <wf8266r-button type"gpio" pin="5" value="0">Test</wf8266r-button>
 </body>
 </html>
